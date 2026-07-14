@@ -16,7 +16,8 @@
   },
   "dependencies": {
     "vue": "beta",
-    "vue-router": "^4.6.4"
+    "vue-router": "^4.6.4",
+    "vuex": "^4.1.0"
   },
   "devDependencies": {
     "@tsconfig/node24": "^24.0.4",
