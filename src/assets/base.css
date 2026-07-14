@@ -26,7 +26,8 @@ body {
 
 ul,
 p,
-h1, h2 {
+h1, h2,
+a {
   line-height: 100%;
   letter-spacing: 0;
 }
@@ -38,9 +39,8 @@ h1, h2, h3, h4, h5 {
 
 a,
 a:hover {
-  color: var(--accent-color);
-  font-weight: 500;
-  text-decoration: none;
+  color: var(--first-color);
+  font-weight: 400;
 }
 
 h1 {
