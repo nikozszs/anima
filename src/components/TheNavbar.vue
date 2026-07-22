@@ -1,12 +1,14 @@
 <template>
   <nav class="container">
-    <img src="../assets/logo.svg" alt="логотип"/>
+    <router-link to="/">
+      <img src="../assets/logo.svg" alt="логотип"/>
+    </router-link>
     <div class="navbar">
       <div class="connection">
         <img src="../assets/whatsapp.svg" />
         <div class="phone">
           <img src="../assets/phone.svg" />
-          <span>+7 (499) 258-625-33</span>
+          <p>+7 (499) 258-625-33</p>
         </div>
         <img src="../assets/search.svg"/>
       </div>
@@ -61,8 +63,6 @@ export default {
   gap: 5px;
   font-size: 1.188rem;
   font-weight: 400;
-  line-height: 100%;
-  letter-spacing: 0;
 }
 
 .links {
@@ -71,7 +71,7 @@ export default {
   align-items: center;
   text-transform: uppercase;
   list-style: none;
-  gap: 60px;
+  gap: 30px;
 }
 
 .link {
