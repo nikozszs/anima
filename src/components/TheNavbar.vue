@@ -11,17 +11,10 @@
         <img src="../assets/search.svg"/>
       </div>
       <ul class="links">
-        <li>
-          <router-link to='/catalog'>каталог</router-link>
-        </li>
-        <li>
-          <router-link to='/sales'>акции</router-link>
-        </li>
-        <li>
-          <router-link to='/partnership'>сотрудничество</router-link>
-        </li>
-        <li>
-          <router-link to='/payment'>оплата и доставка</router-link>
+        <li v-for="link in links" :key="link.path">
+          <router-link class="link" :to='link.path'>
+            {{ link.name }}
+          </router-link>
         </li>
       </ul>
     </div>
@@ -31,21 +24,30 @@
 <script lang="ts">
 import {} from 'vue'
 export default {
-  setup(){}
+  setup(){
+    const links = [
+      {name: 'каталог', path: '/catalog'},
+      {name: 'акции', path: '/sales'},
+      {name: 'сотрудничество', path: '/partnership'},
+      {name: 'оплата и доставка', path: '/payment'},
+    ]
+    return {links}
+  }
 }
 </script>
 
 <style scoped>
 .container {
-  padding: 22px 74px 16px 45px;
+  padding: 22px 60px 16px 45px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .connection {
   display: flex;
   gap: 16px;
   justify-content: flex-end;
+  padding-right: 35px;
 }
 
 .navbar {
@@ -59,6 +61,8 @@ export default {
   gap: 5px;
   font-size: 1.188rem;
   font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0;
 }
 
 .links {
@@ -67,15 +71,18 @@ export default {
   align-items: center;
   text-transform: uppercase;
   list-style: none;
-  gap: clamp(3.75rem, -1.11rem + 13.41vw, 10.625rem);
+  gap: 60px;
 }
 
-.links li a {
+.link {
   white-space: nowrap;
   font-size: 1.125rem;
+  text-decoration: none;
+  padding: 13px 34px 14px;
 }
 
-.links li:active {
-  border: 2px solid var(--first-color);
+.link:active,
+.link:hover {
+  border-bottom: 3px solid var(--first-color);
 }
 </style>
