@@ -44,9 +44,9 @@ export default {
   ]
 
   const secondaryAdvantages = [
-    {title: 'Изделия \n из наличия', number: '04', text: 'Индувидуально к вам подберем товар даже если его нет в наличии'},
-    {title: 'Работаем под \n ключ', number: '05', text: 'Предлагаем изделия и все сопутствующие детали сразу вместе'},
-    {title: 'Консультации по уходу \n за изделием из камня', number: '06', text: 'При приобретении изделий мы даем консультации по уходу и сохранению товарного вида'}
+    {title: 'Изделия \n из наличия', number: '04'},
+    {title: 'Работаем под \n ключ', number: '05'},
+    {title: 'Консультации по уходу \n за изделием из камня', number: '06'}
   ]
 
   return {firstAdvantages, secondaryAdvantages}
@@ -56,7 +56,7 @@ export default {
 
 <style scoped>
 .container {
-  padding: 61px 97px 65px 97px;
+  padding: 61px 70px 65px;
   background: var(--fourt-back);
 }
 

@@ -1,10 +1,14 @@
 <template>
-  <div>
+  <div @click="toggleOpen">
     <p class="list-container-title" :class="titleClass">
       {{ item.title }}
     </p>
     <div class="arrow-block" :class="positionClass">
-      <img class="arrow" src="../../assets/arrow.svg" alt="стрелка">
+      <img
+        class="arrow"
+        src="../../assets/arrow.svg"
+        alt="стрелка"
+        :class="{'arrow-rotated': isOpen}">
       <div class="number-container">
         <div class="decoration-line"></div>
         <span class="block-number">
@@ -13,9 +17,12 @@
       </div>
     </div>
   </div>
+
+    <p v-if="isOpen" class="item-text" >{{ item.text }}</p>
 </template>
 
 <script lang="ts">
+import {ref} from 'vue'
 export default {
   props: {
     item: {
@@ -33,7 +40,10 @@ export default {
   setup(props){
     const positionClass = `arrow-block-${props.align}`
     const titleClass = props.align === 'right' ? 'list-container-title-right' : ''
-    return {positionClass, titleClass}
+
+    const isOpen = ref(false)
+    const toggleOpen = () => isOpen.value = !isOpen.value
+    return {positionClass, titleClass, toggleOpen, isOpen}
   }
 }
 </script>
@@ -78,7 +88,7 @@ export default {
 
 .decoration-line {
   background: var(--accent-color);
-  width: 320px;
+  width: 330px;
   height: 1px;
   margin-bottom: 11px;
   margin-top: 7px;
@@ -98,5 +108,18 @@ export default {
 .arrow {
   width: 13px;
   height: 15px;
+  transition: transform 0.3s ease;
+}
+
+.item-text {
+  font-weight: 500;
+  font-size: 0.75rem;
+  color: var(--third-color);
+  text-transform: none;
+  padding: 5px 66px 0 0;
+}
+
+.arrow-rotated {
+  transform: rotate(180deg);
 }
 </style>
