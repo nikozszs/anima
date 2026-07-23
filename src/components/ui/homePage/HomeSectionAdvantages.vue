@@ -33,7 +33,7 @@
 
 <script lang="ts">
 import {} from 'vue'
-import AdvantageItem from './AdvantageItem.vue';
+import AdvantageItem from '../AdvantageItem.vue';
 export default {
   components: {AdvantageItem},
   setup(){
@@ -60,14 +60,6 @@ export default {
   background: var(--fourt-back);
 }
 
-.decoration {
-  background: var(--accent-color);
-  width: 120px;
-  height: 2px;
-  margin: 0 auto;
-  margin-bottom: 11px;
-}
-
 .title {
   color: var(--third-color);
   text-align: center;
@@ -89,7 +81,8 @@ export default {
 }
 
 .grid-img {
-  background: url('../../assets/gridsecondsection.avif') center/cover no-repeat;
+  background: url('../../../assets/gridsecondsection.avif') center/cover no-repeat;
+  max-height: 587px;
 }
 
 .list-container-item {

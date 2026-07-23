@@ -73,3 +73,11 @@ h5 {
 .title-other-color {
   color: var(--accent-color);
 }
+
+.decoration {
+  background: var(--accent-color);
+  width: 120px;
+  height: 2px;
+  margin: 0 auto;
+  margin-bottom: 11px;
+}

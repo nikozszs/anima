@@ -13,7 +13,7 @@
     </div>
 
     <div class="reference">
-      <img class="reference-img" src="../../assets/image.svg" alt="референс">
+      <img class="reference-img" src="../../../assets/image.svg" alt="референс">
       <div class="reference-line"></div>
     </div>
   </section>
@@ -21,7 +21,7 @@
 
 <script lang="ts">
 import {} from 'vue'
-import AppButton from './AppButton.vue';
+import AppButton from '../AppButton.vue';
 export default {
   components:{AppButton},
   setup(){}
