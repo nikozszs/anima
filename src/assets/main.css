@@ -2,7 +2,7 @@
 
 :root {
   --first-back: #000000f5;
-  --sec-back: #DFDFDF2E;
+  --sec-back: #1d1d1ddd;
   --third-back: #000000;
   --fourt-back: #fff;
   --first-color: #fff;
@@ -35,7 +35,7 @@ button {
   letter-spacing: 0;
 }
 
-h1, h2, h3, h4, h5, button {
+h1, h2, h3, h4, h5, button, ul {
   text-transform: uppercase;
   font-weight: 400;
 }
@@ -69,3 +69,7 @@ h5 {
   line-height: 160%;
   font-weight: 500;
 } /* 16px */
+
+.title-other-color {
+  color: var(--accent-color);
+}

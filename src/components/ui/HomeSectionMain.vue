@@ -42,11 +42,12 @@ export default {
 .relations {
   margin-top: 101px;
   position: relative;
-  padding: 67px 43px 58px 102px;
+  padding: 67px 30px 58px 78px;
+  max-width: 700px;
   background: var(--third-back);
-  width: 743px;
   z-index: 1;
   box-shadow: -20px 0px 20px 15px rgba(125, 136, 131, 0.3);
+  margin-bottom: 170px;
 }
 
 .relations-flexcontainer {
@@ -67,10 +68,6 @@ export default {
   font-weight: 400;
   color: var(--sec-color);
   text-transform: uppercase;
-}
-
-.title-other-color {
-  color: var(--accent-color)
 }
 
 .button-block {

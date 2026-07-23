@@ -46,8 +46,7 @@ export default {
 }
 
 .button-secondary {
-  background: var(--third-back);
-
+  background: var(--sec-back);
 }
 
 .button-secondary:hover {
