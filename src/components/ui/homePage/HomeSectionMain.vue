@@ -33,6 +33,7 @@ export default {
 .container {
   padding: 13px 0 33px;
   position: relative;
+  background: var(--first-back);
 }
 
 .title {

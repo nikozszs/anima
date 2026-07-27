@@ -57,7 +57,6 @@ export default {
 <style scoped>
 .container {
   padding: 61px 70px 65px;
-  background: var(--fourt-back);
 }
 
 .title {

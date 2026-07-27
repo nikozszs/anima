@@ -43,6 +43,7 @@ export default {
   padding: 22px 60px 16px 45px;
   display: flex;
   justify-content: center;
+  background: var(--first-back);
 }
 
 .connection {
