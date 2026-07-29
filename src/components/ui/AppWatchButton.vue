@@ -2,14 +2,17 @@
   <div class="container-watch-button">
     <router-link
       class="watch-button"
-      :to=route>
+      :to=route
+      :class="[colorClass]">
         смотреть все
     </router-link>
 
     <img
       src="../../assets/arrowRight.png"
       alt="стрелка вправо"
-      class="arrowRight">
+      class="arrowRight"
+      :class="[colorClass]"
+      >
   </div>
 </template>
 
@@ -20,11 +23,19 @@ export default {
     path: {
       type: String,
       required: true
+    },
+    color: {
+      type: String,
+      default: 'dark',
+      validator(value: string) {
+        return ['dark', 'white'].includes(value)
+      }
     }
   },
   setup(props) {
     const route = props.path
-    return {route}
+    const colorClass = `color-${props.color}`
+    return {route, colorClass}
   }
 }
 </script>
@@ -41,9 +52,24 @@ export default {
   width: 25px;
 }
 
+.color-dark {
+  color: var(--third-color);
+}
+
+.color-white {
+  color: var(--first-color);
+}
+
+.color-white.arrowRight {
+  filter: brightness(0) invert(1);
+}
+
+.color-dark.arrowRight {
+  filter: none;
+}
+
 .watch-button {
   font-size: 1.313rem;
-  color: var(--third-color);
   text-decoration: none;
 }
 
