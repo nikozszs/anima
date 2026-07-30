@@ -82,3 +82,12 @@ h5 {
   margin: 0 auto;
   margin-bottom: 11px;
 }
+
+.decoration-left {
+  margin: 0
+}
+
+.other-color-decoration {
+  background: var(--first-color);
+  height: 1px;
+}

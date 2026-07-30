@@ -49,6 +49,6 @@ export default {
 
 .container-titleGallery {
   width: 400px;
-  background: rgba(0, 0, 0, 0.6);
+  background: linear-gradient(to bottom, var(--third-back) 10%, transparent 140%);
 }
 </style>

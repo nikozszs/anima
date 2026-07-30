@@ -104,4 +104,16 @@ export default {
   box-shadow: -20px 0px 8px 7px #000;
   background: #00000000;
 }
+
+.reference-line {
+  position: absolute;
+  top: 40px;
+  z-index: -1;
+  height: 585px;
+  width: 1005px;
+  border: 3px solid var(--accent-color);
+  box-shadow: -20px 0px 8px 7px #000;
+  background: #00000000;
+}
+
 </style>

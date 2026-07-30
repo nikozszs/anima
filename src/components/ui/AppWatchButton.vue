@@ -49,7 +49,7 @@ export default {
 }
 
 .arrowRight {
-  width: 25px;
+  width: 23px;
 }
 
 .color-dark {
@@ -71,6 +71,7 @@ export default {
 .watch-button {
   font-size: 1.313rem;
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 .watch-button:hover {

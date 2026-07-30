@@ -115,6 +115,7 @@ export default {
 
 .oldPrice {
   font-size: 0.875rem;
-  color: var(--five-color)
+  color: var(--five-color);
+  text-decoration: line-through;
 }
 </style>

@@ -82,10 +82,6 @@ export default {
   bottom: 20px;
 }
 
-.decoration-left {
-  margin: 0
-}
-
 .gallery {
   display: grid;
   grid-template-columns: repeat(5, 1fr);

@@ -35,6 +35,7 @@ export default {
   border: none;
   color: var(--first-color);
   font-weight: 300;
+  width: 100%;
 }
 
 .button-primary {
