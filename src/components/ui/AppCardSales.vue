@@ -10,7 +10,7 @@
       <p class="newPrice">{{ currency(newPrice) }}</p>
       <p class="oldPrice"> {{ currency(oldPrice) }}</p>
     </div>
-    <AppButton text="Подробнее" color="primary" />
+    <AppButton class="button button-sale" text="Подробнее" color="primary" />
   </div>
 </template>
 
@@ -64,6 +64,10 @@ export default {
   width: 100%;
 }
 
+.button-sale {
+  padding: 12px 77px;
+}
+
 .icon-sale::after {
   content: 'Акция';
   position: absolute;
@@ -99,6 +103,7 @@ export default {
   font-weight: 500;
   letter-spacing: 0;
   line-height: 22px;
+  text-transform: none;
 }
 
 .block-price {
@@ -117,5 +122,10 @@ export default {
   font-size: 0.875rem;
   color: var(--five-color);
   text-decoration: line-through;
+}
+
+.button {
+  text-transform: none;
+  font-weight: 400;
 }
 </style>

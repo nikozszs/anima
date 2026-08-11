@@ -56,7 +56,7 @@ export default {
 
 <style scoped>
 .container {
-  padding: 61px 70px 65px;
+  padding: 61px 70px 35px;
 }
 
 .title {
