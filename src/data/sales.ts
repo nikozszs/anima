@@ -1,4 +1,7 @@
 import image1 from '../assets/image1.svg'
+import image2 from '../assets/image2.jpg'
+import image3 from '../assets/image3.jpg'
+import image4 from '../assets/image4.webp'
 
 export interface SalesItem {
   id: number,
@@ -17,30 +20,30 @@ export const salesItems: SalesItem[] = [
     title: "Kratki",
     subtitle: "Каминная топка Kratki ZUZIA LPT",
     newPrice: 16490,
-    oldPrice: 20000
+    oldPrice: 20990
   },
   { id: 2,
     isSale: true,
-    image: image1,
+    image: image2,
     title: "Kratki",
-    subtitle: "Каминная топка Kratki ZUZIA LPT",
-    newPrice: 16490,
-    oldPrice: 20000
+    subtitle: "Стол Kratki ZUZIA L",
+    newPrice: 26190,
+    oldPrice: 40490
   },
   { id: 3,
     isSale: true,
-    image: image1,
+    image: image3,
     title: "Kratki",
-    subtitle: "Каминная топка Kratki ZUZIA LPT",
-    newPrice: 16490,
-    oldPrice: 20000
+    subtitle: "Панно Kratki ZUJIA LT",
+    newPrice: 18690,
+    oldPrice: 25590
   },
   { id: 4,
     isSale: true,
-    image: image1,
+    image: image4,
     title: "Kratki",
     subtitle: "Каминная топка Kratki ZUZIA LPT",
-    newPrice: 16490,
-    oldPrice: 20000
+    newPrice: 160190,
+    oldPrice: 210000
   }
 ]

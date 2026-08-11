@@ -53,15 +53,18 @@ export default {
 
 <style scoped>
 .container-cardSales {
-  width: 100%;
   border: 1px solid var(--fourt-back);
   padding: 14px 18px 15px;
   background: var(--fourt-back);
+  max-width: 285px;
+  width: 100%;
 }
 
 .image-wrapper {
   position: relative;
   width: 100%;
+  height: 220px;
+  margin-bottom: 26px;
 }
 
 .button-sale {
@@ -83,9 +86,10 @@ export default {
 }
 
 .cardSales-img {
-  margin-bottom: 26px;
   display: block;
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .cardSales-title {

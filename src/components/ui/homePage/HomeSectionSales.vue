@@ -59,7 +59,7 @@ export default {
 .container-current-sales-second {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 28px;
+  row-gap: 28px;
   padding-top: 26px;
 }
 
