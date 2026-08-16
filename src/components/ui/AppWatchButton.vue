@@ -49,7 +49,7 @@ export default {
 }
 
 .arrowRight {
-  width: 23px;
+  width: 26px;
 }
 
 .color-dark {

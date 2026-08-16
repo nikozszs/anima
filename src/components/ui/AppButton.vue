@@ -29,7 +29,7 @@ export default {
 
 <style scoped>
 .button {
-  padding: 26px 41px 23px;
+  padding: 26px 39px 23px;
   font-size: 1rem;
   cursor: pointer;
   border: none;
