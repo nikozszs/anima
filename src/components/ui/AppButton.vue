@@ -62,6 +62,8 @@ export default {
 }
 
 .button-submit:hover {
-  background: #1e7e34
+  background: transparent;
+  color: var(--first-color);
+  border: 1px solid var(--sec-color)
 }
 </style>

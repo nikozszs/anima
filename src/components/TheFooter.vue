@@ -3,26 +3,44 @@
       <h3 class="title-question">Остались вопросы?</h3>
       <h3 class="title-help">свяжитесь с нами, мы вам поможем!</h3>
       <p class="subtitle">Заполните форму и мы свяжемся с Вами в ближайшее время</p>
-      <div class="form">
+      <form class="form" @submit.prevent="onSubmit">
         <AppInput
           type="text"
-          placeholder="Ваше имя"
-          v-model="userName"/>
+          :placeholder="userNameError ? userNameError : 'Ваше имя'"
+          v-model="userName"
+          @blur="userBlur"
+          :error="userNameError"
+          />
         <AppInput
           type="tel"
-          placeholder="Ваш телефон"
-          v-model="userPhone" />
-        <AppButton text="отправить" color="submit" class="footer-btn"/>
-      </div>
-      <label class="checkbox-label">
-        <input class="checkbox" type="checkbox" v-model="agreed" />
-        <span class="text-agree">Согласен на обработку <a class="link" href="https://habr.com/ru/articles/649989/" >персональных данных</a> </span>
-      </label>
+          :placeholder="userPhoneError ? userPhoneError : 'Ваш телефон'"
+          v-model="userPhone"
+          @blur="userPhoneBlur"
+          :error="userPhoneError"
+          />
+        <AppButton
+          text="отправить"
+          color="submit"
+          class="footer-btn"
+          type="submit"
+          :disabled="isButtonDisabled"
+          />
+          <span v-if="isTooManyAttempts">Слишком много попыток. Подождите немного</span>
+
+        <label class="checkbox-label">
+          <input
+            class="checkbox"
+            type="checkbox"
+            v-model="agreed" />
+          <span class="text-agree">Согласен на обработку
+            <a class="link" href="https://habr.com/ru/articles/649989/" >персональных данных</a> </span>
+        </label>
+      </form>
     </div>
 
     <div class="container-links">
       <a href="#" class="arrow"></a>
-      <img src="../assets/logofooter.svg" alt="логотип">
+      <img src="../assets/logofooter.svg" alt="логотип" href="/">
       <div v-for="section in footer" :key="section.title">
         <h5 class="title">{{ section.title }}</h5>
         <div v-for="link in section.links" :key="link.id">
@@ -48,17 +66,28 @@
 </template>
 
 <script lang="ts">
-import {ref} from 'vue'
 import {icons} from '../data/icons.ts'
 import AppInput from './ui/AppInput.vue';
 import AppButton from './ui/AppButton.vue';
 import AppSocial from './ui/AppSocial.vue';
+import { useFormMain } from '@/use/useFormMain.ts';
 export default {
   components: {AppInput, AppButton, AppSocial},
   setup(){
-    const userName = ref('')
-    const userPhone = ref('')
-    const agreed = ref(true)
+    const {
+      userName,
+      userPhone,
+      agreed,
+      userNameError,
+      userPhoneError,
+      userBlur,
+      userPhoneBlur,
+      onSubmit,
+      isSubmitting,
+      isTooManyAttempts,
+      isButtonDisabled
+      } = useFormMain()
+
     const footer = [
       { title: 'меню',
         links: [
@@ -77,10 +106,20 @@ export default {
         ]
       },
     ]
-
-    console.log(userName.value)
-    console.log(userPhone.value)
-    return {userName, userPhone, agreed, footer, icons}
+    return {
+      userName,
+      userPhone,
+      agreed,
+      userNameError,
+      userPhoneError,
+      userBlur,
+      userPhoneBlur,
+      onSubmit,
+      isSubmitting,
+      isTooManyAttempts,
+      isButtonDisabled,
+      footer,
+      icons}
   }
 }
 </script>
@@ -124,6 +163,12 @@ export default {
   text-transform:capitalize;
 }
 
+.footer-btn:disabled {
+  color: var(--sec-color);
+  border: 1px solid var(--sec-color);
+  background: var(--fourt-back);
+}
+
 .text-agree {
   font-size: 0.875rem;
   font-weight: 300;
@@ -132,6 +177,7 @@ export default {
 .checkbox-label {
   display: flex;
   gap: 10px;
+  grid-column: 1/4;
 }
 
 .checkbox {

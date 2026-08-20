@@ -15,9 +15,11 @@
     "format": "prettier --write --experimental-cli src/"
   },
   "dependencies": {
+    "vee-validate": "^4.15.1",
     "vue": "beta",
     "vue-router": "^4.6.4",
-    "vuex": "^4.1.0"
+    "vuex": "^4.1.0",
+    "yup": "^1.7.1"
   },
   "devDependencies": {
     "@tsconfig/node24": "^24.0.4",

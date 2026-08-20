@@ -3,31 +3,46 @@
     :type="type"
     class="input"
     :value="modelValue"
-    @input="$emit('upd:modelValue', ($event.target as HTMLInputElement).value)"
-    :placeholder="placeholder" />
+    @input="handleInput"
+    @blur="handleBlur"
+    :placeholder="placeholder"
+    :class="{ 'error': error }" />
+    <div v-if="error" class="input-error">{{ error }}</div>
 </template>
 
 <script lang="ts">
-// import {} from 'vue'
 export default {
   props: {
     type: {
       type: String,
       required: true,
-      validator(value: string) {
-        return ['text', 'tel'].includes(value)
-      }
     },
     modelValue: {
-      type: String,
+      type: [String, Number],
       required: true,
     },
     placeholder: {
       type: String,
       required: true,
+    },
+    error: {
+      type: String,
+      default: ''
     }
   },
-  emits: ['upd:modelValue']
+  emits: ['upd:modelValue', 'blur'],
+  methods: {
+    handleInput(e: Event) {
+      const target = e.target as HTMLInputElement
+      const value: string | number = this.type === 'number'
+        ? Number(target.value)
+        : target.value
+      this.$emit('upd:modelValue', value)
+    },
+    handleBlur(e: FocusEvent) {
+      this.$emit('blur', e)
+    }
+  }
 }
 </script>
 
@@ -40,5 +55,14 @@ export default {
   line-height: 135%;
   color: var(--sec-color);
   padding: 15px 0 17px 20px;
+}
+
+.input:focus {
+  outline: 1px solid var(--first-color);
+  border-radius: 3px;
+}
+
+.input-error, .input-error:focus {
+  border-color: #ff4444;
 }
 </style>

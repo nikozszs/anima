@@ -1,4 +1,5 @@
 import { createStore, createLogger, useStore as baseUseStore, Store } from 'vuex'
+import form from './modules/form'
 
 const store = createStore({
   state() {
@@ -6,30 +7,14 @@ const store = createStore({
     }
   },
   mutations: {
-    // setMessage(state, message) {
-    //   state.message = message
-    // },
-    // clearMessage(state) {
-    //   state.message = null
-    // },
-    // openSidebar(state) {
-    //   state.sidebar = true
-    // },
-    // closeSidebar(state) {
-    //   state.sidebar = false
-    // }
+
   },
   actions: {
-    // setMessage({commit}, message) {
-    //   commit('setMessage', message)
-    //   setTimeout(() => {
-    //     commit('clearMessage')
-    //   }, 5000);
-    // }
   },
   getters: {
   },
   modules: {
+    form
   }
 })
 
