@@ -42,7 +42,7 @@ export const salesItems: SalesItem[] = [
     isSale: true,
     image: image4,
     title: "Kratki",
-    subtitle: "Каминная топка Kratki ZUZIA LPT",
+    subtitle: "Раковина Kratki ZUZIA LPT",
     newPrice: 160190,
     oldPrice: 210000
   }
