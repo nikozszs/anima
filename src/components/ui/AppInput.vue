@@ -7,7 +7,6 @@
     @blur="handleBlur"
     :placeholder="placeholder"
     :class="{ 'error': error }" />
-    <div v-if="error" class="input-error">{{ error }}</div>
 </template>
 
 <script lang="ts">
@@ -30,14 +29,14 @@ export default {
       default: ''
     }
   },
-  emits: ['upd:modelValue', 'blur'],
+  emits: ['update:modelValue', 'blur'],
   methods: {
     handleInput(e: Event) {
       const target = e.target as HTMLInputElement
       const value: string | number = this.type === 'number'
         ? Number(target.value)
         : target.value
-      this.$emit('upd:modelValue', value)
+      this.$emit('update:modelValue', value)
     },
     handleBlur(e: FocusEvent) {
       this.$emit('blur', e)

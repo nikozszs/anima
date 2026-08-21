@@ -18,7 +18,7 @@ export default {
       validator(value: string) {
         return ['primary', 'secondary', 'submit' ].includes(value)
       }
-    }
+    },
   },
   setup(props){
     const variantClass = `button-${props.color}`

@@ -7,8 +7,8 @@
       </div>
       <h1 class="title">Каменные изделия <span class="title-other-color">для вашего дома</span></h1>
       <div class="button-block">
-        <AppButton text="рассчитать стоимость" color="primary"/>
-        <AppButton text="Связаться с нами" color="secondary"/>
+        <AppButton text="рассчитать стоимость" color="primary" @click="scroll"/>
+        <AppButton text="Связаться с нами" color="secondary" @click="scroll"/>
       </div>
     </div>
 
@@ -20,11 +20,21 @@
 </template>
 
 <script lang="ts">
-import {} from 'vue'
 import AppButton from '../AppButton.vue';
 export default {
   components:{AppButton},
-  setup(){}
+  setup(){
+    const scroll = () => {
+      const form = document.getElementById('form')
+      if (form) {
+        form.scrollIntoView({
+          behavior: 'smooth'
+        })
+      }
+    }
+
+    return {scroll}
+  }
 }
 
 </script>

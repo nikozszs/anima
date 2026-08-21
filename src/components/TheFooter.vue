@@ -3,7 +3,7 @@
       <h3 class="title-question">Остались вопросы?</h3>
       <h3 class="title-help">свяжитесь с нами, мы вам поможем!</h3>
       <p class="subtitle">Заполните форму и мы свяжемся с Вами в ближайшее время</p>
-      <form class="form" @submit.prevent="onSubmit">
+      <form class="form" @submit.prevent="onSubmit" id="form">
         <AppInput
           type="text"
           :placeholder="userNameError ? userNameError : 'Ваше имя'"
@@ -23,7 +23,7 @@
           color="submit"
           class="footer-btn"
           type="submit"
-          :disabled="isButtonDisabled"
+          :disabled="isSubmitting"
           />
           <span v-if="isTooManyAttempts">Слишком много попыток. Подождите немного</span>
 
@@ -40,7 +40,9 @@
 
     <div class="container-links">
       <a href="#" class="arrow"></a>
-      <img src="../assets/logofooter.svg" alt="логотип" href="/">
+      <router-link to="/">
+        <img src="../assets/logofooter.svg" alt="логотип">
+      </router-link>
       <div v-for="section in footer" :key="section.title">
         <h5 class="title">{{ section.title }}</h5>
         <div v-for="link in section.links" :key="link.id">
@@ -84,8 +86,7 @@ export default {
       userPhoneBlur,
       onSubmit,
       isSubmitting,
-      isTooManyAttempts,
-      isButtonDisabled
+      isTooManyAttempts
       } = useFormMain()
 
     const footer = [
@@ -106,6 +107,7 @@ export default {
         ]
       },
     ]
+
     return {
       userName,
       userPhone,
@@ -117,9 +119,9 @@ export default {
       onSubmit,
       isSubmitting,
       isTooManyAttempts,
-      isButtonDisabled,
       footer,
-      icons}
+      icons,
+    }
   }
 }
 </script>
