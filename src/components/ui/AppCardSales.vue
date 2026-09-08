@@ -8,7 +8,10 @@
     <h5 class="cardSales-subtitle">{{ subtitle }}</h5>
     <div class="block-price">
       <p class="newPrice">{{ currency(newPrice) }}</p>
-      <p class="oldPrice"> {{ currency(oldPrice) }}</p>
+      <p class="oldPrice"
+        v-if="oldPrice !== undefined && oldPrice !== null">
+        {{ currency(oldPrice) }}
+      </p>
     </div>
     <AppButton class="button button-sale" text="Подробнее" color="primary" />
   </div>
@@ -41,7 +44,8 @@ export default {
     },
     oldPrice: {
       type: Number,
-      required: true
+      required: false,
+      default: null
     }
   },
   components: {AppButton},
@@ -78,7 +82,7 @@ export default {
   color: var(--fourt-color);
   background: rgba(255, 255, 255, 0.45);
   width: 86px;
-  font-weight: 300;
+  font-weight: 500;
   font-size: 1.063rem;
   top: 0;
   right: 0;

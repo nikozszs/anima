@@ -76,6 +76,7 @@ export default {
   padding: 18px 0;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 51px;
 }
 
 .navigation {

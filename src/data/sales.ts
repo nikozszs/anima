@@ -10,7 +10,7 @@ export interface SalesItem {
   title: string,
   subtitle: string,
   newPrice: number,
-  oldPrice: number
+  oldPrice: number | null | undefined
 }
 
 export const salesItems: SalesItem[] = [

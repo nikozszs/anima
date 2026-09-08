@@ -5,6 +5,7 @@
   --sec-back: #1d1d1ddd;
   --third-back: #000000;
   --fourt-back: #fff;
+  --fix-back: #F9F9F9;
   --first-color: #fff;
   --accent-color: #28553F;
   --sec-color: #9C9C9C;
@@ -12,6 +13,7 @@
   --fourt-color: #000;
   --five-color: #949981;
   --six-color: #E5E5E5;
+  --seven-color: #8C8C8C;
 }
 
 * {
