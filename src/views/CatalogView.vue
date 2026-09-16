@@ -2,13 +2,13 @@
   <div class='container'>
     <div class="decoration decoration-left"></div>
     <h2 class="title-other-color">Изделия из натурального камня</h2>
-    <ListCategory />
+    <ListCategory @sort-change="onSortChange"/>
     <div class="container-catalog">
       <div>
         <CatalogFilter @filter-change="handleFilterChange"/>
       </div>
       <ul class="catalog-gallery">
-        <li v-for="item in filteredProducts"
+        <li v-for="item in sortedProducts"
           :key="item.id"
           >
           <AppCardSales
@@ -26,72 +26,34 @@
 </template>
 
 <script lang="ts">
-import { ref, computed } from 'vue'
 import ListCategory from '../components/ui/ListCategory.vue';
-import { products } from '../data/products.ts';
-import {} from 'vue'
+import { useSelectedFilters } from '@/use/useSelectedFilters.ts';
 import AppCardSales from '../components/ui/AppCardSales.vue'
 import CatalogFilter from '../components/ui/CatalogFilter.vue'
+import {ref} from 'vue'
+import { useSorting } from '@/use/useSorting.ts';
 export default {
   components: {ListCategory, AppCardSales, CatalogFilter},
   setup(){
-    const allProducts = ref(products)
-    const selectedFilters = ref<Record<string, string[]>>({})
-
-    const filterProducts = () => {
-      if (Object.keys(selectedFilters.value).length === 0) {
-        return allProducts.value
-      }
-
-      return allProducts.value.filter(product => {
-        const matches = true
-
-        if (selectedFilters.value['Вид камня']?.length) {
-          const typeMatch = selectedFilters.value['Вид камня'].some(
-            type => product.characteristics.typeOfStone.toLowerCase() === type.toLowerCase()
-          )
-          if (!typeMatch) return false
-        }
-
-        if (selectedFilters.value['Изделие']?.length) {
-          const productMatch = selectedFilters.value['Изделие'].some(
-            productType => product.characteristics.product.toLowerCase() === productType.toLowerCase()
-          )
-          if (!productMatch) return false
-        }
-
-        if (selectedFilters.value['Месторождение']?.length) {
-          const fieldMatch = selectedFilters.value['Месторождение'].some(
-            field => product.characteristics.field.toLowerCase() === field.toLowerCase()
-          )
-          if (!fieldMatch) return false
-        }
-
-        if (selectedFilters.value['Цвет']?.length) {
-          const colors = product.characteristics.color
-            .toLowerCase()
-            .split(', ')
-            .map(c => c.trim())
-          const colorMatch = selectedFilters.value['Цвет'].some(
-            color => colors.includes(color.toLowerCase())
-          )
-          if (!colorMatch) return false
-        }
-
-        return matches
-      })
-    }
-
-    const filteredProducts = computed(() => {return filterProducts()})
+    const {filteredProducts, selectedFilters} = useSelectedFilters()
 
     const handleFilterChange = (filters: Record<string, string[]>) => {
       selectedFilters.value = filters
     }
 
+    const sortValue = ref('default')
+
+    const onSortChange = (value:string) => {
+      sortValue.value = value
+    }
+
+    const { sortedProducts } = useSorting(filteredProducts, sortValue)
+
     return {
-      allProducts,
       filteredProducts,
-      handleFilterChange
+      handleFilterChange,
+      onSortChange,
+      sortedProducts
     }
   }
 }

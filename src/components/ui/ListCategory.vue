@@ -30,12 +30,11 @@
     <div v-if="showBlock" class="category">
       <span class="nav-link">Сортировать:</span>
       <select
-        v-model="select"
         class="select"
-        @change="handleSortChange"
+        @change="onChange"
         >
         <option
-          v-for="option in sortOptions"
+          v-for="option in defaultSortOptions"
           :key="option.value"
           :value="option.value">
             {{ option.label }}
@@ -46,24 +45,24 @@
 </template>
 
 <script lang="ts">
-import { useNavCategory } from '../../use/useNavCategory';
+import { useBreadcrumbs } from '../../use/useBreadcrumbs';
+import {defaultSortOptions} from '../../use/useSorting';
 
 export default {
-  setup(){
-    const {
-      listNavigation,
-      showBlock,
-      select,
-      sortOptions,
-      handleSortChange
-    } = useNavCategory()
+  emits: ['sort-change'],
+  setup(_, {emit}){
+    const { listNavigation, showBlock } = useBreadcrumbs()
+
+    const onChange = (e: Event) => {
+      const value = (e.target as HTMLSelectElement).value
+      emit('sort-change', value)
+    }
 
     return {
       listNavigation,
       showBlock,
-      select,
-      sortOptions,
-      handleSortChange
+      defaultSortOptions,
+      onChange
     }
   }
 }

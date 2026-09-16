@@ -93,7 +93,8 @@ export default {
             { name: 'Бежевый', selected: false },
             { name: 'Серый', selected: false }
           ]
-        }])
+        }
+      ])
 
     watch(filters, () => {
       const selected = getSelectedFilters()
