@@ -1,5 +1,5 @@
 <template>
-  <div class="container-cardSales">
+  <div class="container-cardSales" @click="openCard">
     <div class="image-wrapper">
       <div class="icon-sale" v-if="isSale"></div>
       <img class="cardSales-img" :src="image" :alt="title"/>
@@ -13,11 +13,16 @@
         {{ currency(oldPrice) }}
       </p>
     </div>
-    <AppButton class="button button-sale" text="Подробнее" color="primary" />
+    <AppButton
+      class="button button-sale"
+      text="Подробнее"
+      color="primary"
+      />
   </div>
 </template>
 
 <script lang="ts">
+import { useRouter } from 'vue-router';
 import { currency } from '../../utils/currency.ts';
 import AppButton from './AppButton.vue';
 export default {
@@ -46,11 +51,17 @@ export default {
       type: Number,
       required: false,
       default: null
+    },
+    id: {
+      type: Number,
+      required: true,
     }
   },
   components: {AppButton},
-  setup(){
-    return {currency}
+  setup(props){
+    const router = useRouter()
+    const openCard = () => router.push({name: 'product', params: {id: props.id}})
+    return {currency, openCard}
   }
 }
 </script>

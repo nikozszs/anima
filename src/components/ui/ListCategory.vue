@@ -2,7 +2,7 @@
   <div class="container-list">
     <div>
       <ul class="navigation">
-        <li v-for="(item, index) in listNavigation"
+        <li v-for="(item, index) in navigation"
           :key="item.name"
           >
           <router-link
@@ -19,7 +19,7 @@
             {{ item.name }}
           </span>
           <img
-            v-if="!item.active && index < listNavigation.length - 1"
+            v-if="index < navigation.length - 1"
             src="../../assets/arrowNavigation.svg"
             alt="стрелка"
             class="arrow"
@@ -45,13 +45,30 @@
 </template>
 
 <script lang="ts">
+import { computed } from 'vue';
 import { useBreadcrumbs } from '../../use/useBreadcrumbs';
 import {defaultSortOptions} from '../../use/useSorting';
 
 export default {
+  props: {
+    lastItem: {
+      type: String,
+      default: null,
+      required: false
+    }
+  },
   emits: ['sort-change'],
-  setup(_, {emit}){
+  setup(props, {emit}){
     const { listNavigation, showBlock } = useBreadcrumbs()
+
+    const navigation = computed(() => {
+      if (!props.lastItem) return listNavigation.value
+
+      return [
+        ...listNavigation.value,
+        {name: props.lastItem, active: true, route: ''}
+      ]
+    })
 
     const onChange = (e: Event) => {
       const value = (e.target as HTMLSelectElement).value
@@ -59,7 +76,7 @@ export default {
     }
 
     return {
-      listNavigation,
+      navigation,
       showBlock,
       defaultSortOptions,
       onChange

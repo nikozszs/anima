@@ -124,6 +124,7 @@ export default {
 .container-filter {
   background: var(--fix-back);
   padding: 18px 14px;
+  margin-top: 14px;
   width: 288px;
 }
 

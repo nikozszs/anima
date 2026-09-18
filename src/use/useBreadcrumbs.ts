@@ -1,5 +1,5 @@
 import { computed} from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { useRoute} from 'vue-router'
 
 interface NavigationItem {
   name: string
@@ -31,18 +31,6 @@ export function useBreadcrumbs(options: UseNavigationCategoryOptions = {}) {
       ...item,
       active: item.route === currentPath
     }))
-
-    if (currentPath.startsWith('/catalog/')) {
-      const productName = route.params.id
-      return [
-        ...navigationWithActive,
-        {
-          name: decodeURIComponent(String(productName)),
-          route: currentPath,
-          active: true
-        }
-      ]
-    }
 
     const hasActive = navigationWithActive.some(item => item.active)
     if (!hasActive && navigationWithActive.length > 0) {

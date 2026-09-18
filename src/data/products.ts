@@ -5,6 +5,8 @@ import image2 from '../assets/image2.jpg'
 import image7 from '../assets/image7.jpg'
 import image8 from '../assets/image8.webp'
 import image3 from '../assets/image3.jpg'
+import image9 from '../assets/image9.jpg'
+import image10 from '../assets/image10.jpg'
 
 export interface ProductItem {
   model: number,
@@ -137,7 +139,7 @@ export const products: ProductItem[] = [
     article: 183260092,
     inStock: true,
     id: 6,
-    isSale: false,
+    isSale: true,
     image: image8,
     title: 'Комод трехъярусный из мрамора',
     subtitleNDS: 'Цена указана с учетом НДС',
@@ -172,5 +174,47 @@ export const products: ProductItem[] = [
       field: 'Италия'
     },
     description: 'Декоративное панно из натурального дикого камня. Уникальный рисунок и текстура создают неповторимый интерьерный акцент. Изделие ручной работы от итальянских мастеров. Идеально подходит для оформления стен в гостиной, холле или ресторане.'
+  },
+  {
+    model: 183260096,
+    article: 183260096,
+    inStock: false,
+    id: 8,
+    percentSale: 10,
+    isSale: true,
+    image: image9,
+    title: 'Стол из натурального камня',
+    subtitleNDS: 'Цена указана с учетом НДС',
+    amount: 0,
+    newPrice: 89690,
+    oldPrice: 100990,
+    characteristics: {
+      typeOfStone: 'дикий камень',
+      product: 'стол',
+      color: 'серый',
+      field: 'Бразилия'
+    },
+    description: 'Стол из натурального дикого камня. Уникальный рисунок и текстура серого камня создают неповторимый интерьерный акцент. Изделие ручной работы от бразильских мастеров. Идеально подходит для гостиной, столовой или загородного дома.'
+  },
+  {
+    model: 183260097,
+    article: 183260097,
+    inStock: true,
+    id: 9,
+    percentSale: 0,
+    isSale: true,
+    image: image10,
+    title: 'Раковина в ванную',
+    subtitleNDS: 'Цена указана с учетом НДС',
+    amount: 10,
+    newPrice: 39190,
+    oldPrice: 48990,
+    characteristics: {
+      typeOfStone: 'мрамор',
+      product: 'раковина',
+      color: 'серый',
+      field: 'Турция'
+    },
+    description: 'Раковина из натурального мрамора. Уникальный рисунок и текстура серого камня делают каждое изделие неповторимым. Ручная работа турецких мастеров. Прочная и долговечная поверхность устойчива к влаге и механическим повреждениям. Идеально подходит для ванной комнаты или санузла.'
   },
 ]

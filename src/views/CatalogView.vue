@@ -2,23 +2,16 @@
   <div class='container'>
     <div class="decoration decoration-left"></div>
     <h2 class="title-other-color">Изделия из натурального камня</h2>
-    <ListCategory @sort-change="onSortChange"/>
+    <ListCategory @sort-change="onSortChange" />
     <div class="container-catalog">
       <div>
-        <CatalogFilter @filter-change="handleFilterChange"/>
+        <CatalogFilter @filter-change="handleFilterChange" />
       </div>
       <ul class="catalog-gallery">
-        <li v-for="item in sortedProducts"
-          :key="item.id"
-          >
-          <AppCardSales
-            :image="item.image"
-            :title="item.title"
-            :subtitle="item.subtitleNDS"
-            :newPrice="item.newPrice"
-            :isSale="item.isSale"
-            :oldPrice="item.oldPrice">
-          </AppCardSales>
+        <li v-for="item in sortedProducts" :key="item.id">
+          <AppCard :id="item.id" :image="item.image" :title="item.title" :subtitle="item.subtitleNDS"
+            :newPrice="item.newPrice" :isSale="item.isSale" :oldPrice="item.oldPrice">
+          </AppCard>
         </li>
       </ul>
     </div>
@@ -28,14 +21,14 @@
 <script lang="ts">
 import ListCategory from '../components/ui/ListCategory.vue';
 import { useSelectedFilters } from '@/use/useSelectedFilters.ts';
-import AppCardSales from '../components/ui/AppCardSales.vue'
+import AppCard from '../components/ui/AppCard.vue'
 import CatalogFilter from '../components/ui/CatalogFilter.vue'
-import {ref} from 'vue'
+import { ref } from 'vue'
 import { useSorting } from '@/use/useSorting.ts';
 export default {
-  components: {ListCategory, AppCardSales, CatalogFilter},
-  setup(){
-    const {filteredProducts, selectedFilters} = useSelectedFilters()
+  components: { ListCategory, AppCard, CatalogFilter },
+  setup() {
+    const { filteredProducts, selectedFilters } = useSelectedFilters()
 
     const handleFilterChange = (filters: Record<string, string[]>) => {
       selectedFilters.value = filters
@@ -43,7 +36,7 @@ export default {
 
     const sortValue = ref('default')
 
-    const onSortChange = (value:string) => {
+    const onSortChange = (value: string) => {
       sortValue.value = value
     }
 

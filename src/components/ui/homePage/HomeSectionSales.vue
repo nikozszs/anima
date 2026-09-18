@@ -8,20 +8,15 @@
           <h2 class="title">
             Актуальные акции <br /> на <span class="title-other-color">нашу продукцию</span>
           </h2>
-          <p class="subtitle">Учитывая ключевые сценарии поведения, обучения кадров влечет за собой процесс внедрения и модернизации распределения</p>
+          <p class="subtitle">Учитывая ключевые сценарии поведения, обучения кадров влечет за собой процесс внедрения и
+            модернизации распределения</p>
           <AppButton class="button" text="перейти в  каталог" color="primary" />
         </div>
         <div class="line"></div>
       </div>
       <div class="container-current-sales-second">
-        <AppCardSales v-for="item in salesItems"
-          :key="item.id"
-          :image="item.image"
-          :new-price="item.newPrice"
-          :old-price="item.oldPrice"
-          :is-sale="item.isSale"
-          :title="item.title"
-          :subtitle="item.subtitle"
+        <AppCard :id="item.id" v-for="item in salesItems" :key="item.id" :image="item.image" :new-price="item.newPrice"
+          :old-price="item.oldPrice ?? undefined" :is-sale="item.isSale" :title="item.title" :subtitle="item.subtitle"
           />
       </div>
     </div>
@@ -30,13 +25,13 @@
 
 <script lang="ts">
 import AppWatchButton from '../AppWatchButton.vue';
-import {salesItems} from '../../../data/sales.ts'
-import AppCardSales from '../AppCardSales.vue';
+import { salesItems } from '../../../data/sales.ts'
+import AppCard from '../AppCard.vue';
 import AppButton from '../AppButton.vue';
 export default {
-  components: {AppWatchButton, AppCardSales, AppButton},
-  setup(){
-    return {salesItems}
+  components: { AppWatchButton, AppCard, AppButton },
+  setup() {
+    return { salesItems }
   }
 }
 </script>
@@ -44,7 +39,7 @@ export default {
 <style scoped>
 .container-section-sales {
   background:
-  linear-gradient(to right, rgba(0, 0, 0, 0.8) 30%, transparent 100%),
+    linear-gradient(to right, rgba(0, 0, 0, 0.8) 30%, transparent 100%),
     url('../../../assets/backgroundSales.jpg');
   background-size: cover;
   padding: 57px 80px 100px 0;
