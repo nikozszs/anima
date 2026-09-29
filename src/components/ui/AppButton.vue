@@ -36,6 +36,7 @@ export default {
   color: var(--first-color);
   font-weight: 300;
   width: 100%;
+  box-shadow: 0 0 47px 3px rgba(0, 0, 0, 0.06);
 }
 
 .button-primary {
@@ -63,7 +64,7 @@ export default {
 
 .button-submit:hover {
   background: transparent;
-  color: var(--first-color);
+  color: var(--fourt-color);
   border: 1px solid var(--sec-color)
 }
 </style>

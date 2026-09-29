@@ -31,8 +31,9 @@ input {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Raleway', sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   color: var(--first-color);
+  font-weight: 400;
   background: var(--fourt-back);
 }
 
@@ -80,6 +81,10 @@ h5 {
   font-weight: 500;
 } /* 16px */
 
+.button img {
+  transition: transform 0.25s ease;
+}
+
 .title-other-color {
   color: var(--accent-color);
 }
@@ -99,4 +104,28 @@ h5 {
 .other-color-decoration {
   background: var(--first-color);
   height: 1px;
+}
+
+.border-bottom {
+  border-bottom: 1px solid var(--six-color);
+}
+
+.card-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.accent-color {
+  color: var(--accent-color);
+  text-transform: none;
+}
+
+.fw600 {
+  font-weight: 600;
+}
+
+.fw500 {
+  font-weight: 500;
 }

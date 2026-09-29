@@ -2,7 +2,7 @@
   <div class="container-cardSales" @click="openCard">
     <div class="image-wrapper">
       <div class="icon-sale" v-if="isSale"></div>
-      <img class="cardSales-img" :src="image" :alt="title"/>
+      <img class="card-img" :src="image" :alt="title"/>
     </div>
     <p class="cardSales-title">{{ title }}</p>
     <h5 class="cardSales-subtitle">{{ subtitle }}</h5>
@@ -98,13 +98,6 @@ export default {
   top: 0;
   right: 0;
   padding: 7px;
-}
-
-.cardSales-img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 .cardSales-title {

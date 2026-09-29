@@ -1,5 +1,5 @@
 <template>
-  <div class="container-list">
+  <div class="container-list border-bottom">
     <div>
       <ul class="navigation">
         <li v-for="(item, index) in navigation"
@@ -88,7 +88,6 @@ export default {
 <style scoped>
 .container-list {
   border-top: 1px solid var(--six-color);
-  border-bottom: 1px solid var(--six-color);
   padding: 18px 0;
   display: flex;
   justify-content: space-between;

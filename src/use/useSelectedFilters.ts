@@ -1,4 +1,4 @@
-import { ref, reactive, computed } from 'vue'
+import { ref, computed } from 'vue'
 import { products } from '@/data/products'
 
 export function useSelectedFilters() {
