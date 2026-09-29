@@ -26,7 +26,7 @@ export const salesItems: SalesItem[] = [
     isSale: true,
     image: image2,
     title: "Kratki",
-    subtitle: "Стол Kratki ZUZIA L",
+    subtitle: "Стол Kratki ",
     newPrice: 26190,
     oldPrice: 40490
   },

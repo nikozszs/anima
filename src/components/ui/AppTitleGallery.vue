@@ -5,7 +5,6 @@
 </template>
 
 <script lang="ts">
-import {} from 'vue'
 export default {
   props: {
     title: {
@@ -34,7 +33,6 @@ export default {
   line-height: 150%;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: var(--first-color);
   text-align: center;
   padding: 11px 0;
 }

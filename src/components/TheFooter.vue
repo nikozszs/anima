@@ -2,7 +2,7 @@
     <div class="container-form">
       <h3 class="title-question">Остались вопросы?</h3>
       <h3 class="title-help">свяжитесь с нами, мы вам поможем!</h3>
-      <p class="subtitle">Заполните форму и мы свяжемся с Вами в ближайшее время</p>
+      <p class="subtitle fw300 text-lg">Заполните форму и мы свяжемся с Вами в ближайшее время</p>
       <form class="form" @submit.prevent="onSubmit" id="form">
         <AppInput
           type="text"
@@ -19,7 +19,7 @@
           :error="userPhoneError"
           />
         <AppButton
-          text="отправить"
+          text="Отправить"
           color="submit"
           class="footer-btn"
           type="submit"
@@ -51,9 +51,9 @@
       </div>
       <div class="contacts">
         <h5 class="title">контакты для связи</h5>
-        <h5 class="subtitle-contacts">Телефон:
+        <h5 class="subtitle-contacts fw300">Телефон:
           <span class="subtitle-contacts-accent">8(405) 555-0128 </span></h5>
-        <h5 class="subtitle-contacts">Почта:
+        <h5 class="subtitle-contacts fw300">Почта:
           <span class="subtitle-contacts-accent">hello@createx.com </span></h5>
         <div class="block-social">
           <AppSocial
@@ -144,8 +144,6 @@ export default {
 }
 
 .subtitle {
-  font-size: 1.125rem;
-  font-weight: 300;
   margin-bottom: 29px;
 }
 
@@ -162,7 +160,6 @@ export default {
 
 .footer-btn {
   padding: 15px 17px;
-  text-transform:capitalize;
 }
 
 .footer-btn:disabled {
@@ -227,7 +224,6 @@ export default {
 }
 
 .subtitle-contacts {
-  font-weight: 300;
   letter-spacing: 0;
   text-transform: capitalize;
 }

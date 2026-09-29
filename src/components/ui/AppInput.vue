@@ -50,7 +50,6 @@ export default {
   border: 1px solid var(--sec-color);
   background: transparent;
   font-size: 0.875rem;
-  font-weight: 400;
   line-height: 135%;
   color: var(--sec-color);
   padding: 15px 0 17px 20px;

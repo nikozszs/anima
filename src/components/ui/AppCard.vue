@@ -4,17 +4,17 @@
       <div class="icon-sale" v-if="isSale"></div>
       <img class="card-img" :src="image" :alt="title"/>
     </div>
-    <p class="cardSales-title">{{ title }}</p>
+    <p class="cardSales-title text-sm fw700">{{ title }}</p>
     <h5 class="cardSales-subtitle">{{ subtitle }}</h5>
     <div class="block-price">
-      <p class="newPrice">{{ currency(newPrice) }}</p>
-      <p class="oldPrice"
+      <p class="newPrice text-xl fw700">{{ currency(newPrice) }}</p>
+      <p class="oldPrice text-sm"
         v-if="oldPrice !== undefined && oldPrice !== null">
         {{ currency(oldPrice) }}
       </p>
     </div>
     <AppButton
-      class="button button-sale"
+      class="button fw400"
       text="Подробнее"
       color="primary"
       />
@@ -72,7 +72,10 @@ export default {
   padding: 14px 18px 15px;
   background: var(--fourt-back);
   max-width: 285px;
+  min-height: 445px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .image-wrapper {
@@ -82,8 +85,9 @@ export default {
   margin-bottom: 26px;
 }
 
-.button-sale {
+.button {
   padding: 12px 77px;
+  margin-top: auto;
 }
 
 .icon-sale::after {
@@ -101,9 +105,7 @@ export default {
 }
 
 .cardSales-title {
-  font-size: 0.875rem;
   line-height: 22px;
-  font-weight: 700;
   margin-bottom: 4px;
 }
 
@@ -112,7 +114,6 @@ export default {
 }
 
 .cardSales-subtitle {
-  font-weight: 500;
   letter-spacing: 0;
   line-height: 22px;
   text-transform: none;
@@ -125,19 +126,11 @@ export default {
 }
 
 .newPrice {
-  font-weight: 700;
-  font-size: 1.25rem;
   color: var(--accent-color)
 }
 
 .oldPrice {
-  font-size: 0.875rem;
   color: var(--five-color);
   text-decoration: line-through;
-}
-
-.button {
-  text-transform: none;
-  font-weight: 400;
 }
 </style>

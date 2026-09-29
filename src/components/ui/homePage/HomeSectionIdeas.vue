@@ -3,10 +3,11 @@
     <div class="decoration decoration-left"></div>
     <h2 class="title"> Идеи для <span class="title-other-color"> <br />вдохновения</span></h2>
     <div class="gallery">
-      <img  v-for="item in ideas"
+      <img v-for="item in ideas"
         :key="item.id"
         :src="item.src"
         :class="`idea${item.id}`"
+        alt="Идея для вдохновения"
         />
     </div>
     <div class="button-container">
@@ -101,7 +102,6 @@ export default {
 
 .button {
   width: 34%;
-  text-transform: none;
   box-shadow: 0 4px 47px 15px rgba(0, 0, 0, 0.25);
 }
 </style>

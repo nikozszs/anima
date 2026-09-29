@@ -1,5 +1,5 @@
 <template>
-  <button class="button" :class="variantClass">
+  <button class="button fw300 text-base" :class="variantClass">
     {{ text }}
   </button>
 </template>
@@ -30,11 +30,9 @@ export default {
 <style scoped>
 .button {
   padding: 26px 39px 23px;
-  font-size: 1rem;
   cursor: pointer;
   border: none;
   color: var(--first-color);
-  font-weight: 300;
   width: 100%;
   box-shadow: 0 0 47px 3px rgba(0, 0, 0, 0.06);
 }

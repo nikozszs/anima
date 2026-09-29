@@ -8,7 +8,7 @@
         :class="{active: activeFilter === index}"
         @click="toggleFilter(index)"
         >
-          <p class="text-type">{{ filter.name }}</p>
+          <p class="text-type fw500 text-base">{{ filter.name }}</p>
           <img src="../../assets/accordionArrow.svg"
             alt="стрелка"
             class="arrow"
@@ -155,17 +155,13 @@ export default {
 
 .text-type {
   color: var(--seven-color);
-  font-weight: 500;
-  font-size: 1rem;
   line-height: 55px;
-  letter-spacing: 0;
   transition: color 0.2s ease;
   cursor: pointer;
 }
 
 .filter-option {
   color: var(--seven-color);
-  font-weight: 400;
   font-size: 0.95rem;
   line-height: 40px;
   padding: 0 8px;

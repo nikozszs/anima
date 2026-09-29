@@ -63,7 +63,6 @@ export default {
   display: flex;
   gap: 5px;
   font-size: 1.188rem;
-  font-weight: 400;
 }
 
 .links {

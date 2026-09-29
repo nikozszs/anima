@@ -1,7 +1,7 @@
 <template>
   <section class="container">
     <div class="decoration"></div>
-    <h2 class="title">наши преимущества - <p class="title-other-color">ваш результат</p></h2>
+    <h2 class="title">наши преимущества - <br> <span class="title-other-color">ваш результат</span></h2>
 
     <div class="grid-section">
       <div class="grid-col">
@@ -62,7 +62,6 @@ export default {
 .title {
   color: var(--third-color);
   text-align: center;
-  line-height: 1.3em;
 }
 
 .grid-section {

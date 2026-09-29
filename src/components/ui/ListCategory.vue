@@ -7,14 +7,14 @@
           >
           <router-link
             v-if="!item.active"
-            class="nav-link"
+            class="nav-link text-base"
             :to="item.route"
             >
             {{ item.name }}
           </router-link>
           <span
             v-else
-            class="nav-link active"
+            class="nav-link text-base active"
             >
             {{ item.name }}
           </span>
@@ -28,7 +28,7 @@
       </ul>
     </div>
     <div v-if="showBlock" class="category">
-      <span class="nav-link">Сортировать:</span>
+      <span class="nav-link text-base">Сортировать:</span>
       <select
         class="select"
         @change="onChange"
@@ -101,11 +101,9 @@ export default {
 }
 
 .nav-link {
-  font-size: 1rem;
-  font-weight: 400;
   color: var(--sec-color);
-  text-transform: none;
   text-decoration: none;
+  text-transform: capitalize;
 }
 
 .active {
@@ -119,7 +117,6 @@ export default {
 .select {
   color: var(--accent-color);
   border: none;
-  list-style: none;
   text-transform: lowercase;
   padding-left: 5px;
   font-size: 17px;

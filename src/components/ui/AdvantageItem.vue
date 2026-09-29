@@ -1,6 +1,6 @@
 <template>
   <div @click="toggleOpen">
-    <p class="list-container-title" :class="titleClass">
+    <p class="list-container-title fw600 text-xl" :class="titleClass">
       {{ item.title }}
     </p>
     <div class="arrow-block" :class="positionClass">
@@ -10,15 +10,15 @@
         alt="стрелка"
         :class="{'arrow-rotated': isOpen}">
       <div class="number-container">
-        <div class="decoration-line"></div>
-        <span class="block-number">
+        <div class="decoration decoration-line"></div>
+        <span class="block-number text-xl">
           {{ item.number }}
         </span>
       </div>
     </div>
   </div>
 
-    <p v-if="isOpen" class="item-text" >{{ item.text }}</p>
+    <p v-if="isOpen" class="item-text fw500" >{{ item.text }}</p>
 </template>
 
 <script lang="ts">
@@ -51,8 +51,6 @@ export default {
 <style scoped>
 .list-container-title {
   color: var(--third-color);
-  font-weight: 600;
-  font-size: 1.25rem;
   list-style: none;
   line-height: 1em;
   white-space: pre-line;
@@ -87,9 +85,7 @@ export default {
 }
 
 .decoration-line {
-  background: var(--accent-color);
   width: 330px;
-  height: 1px;
   margin-bottom: 11px;
   margin-top: 7px;
 }
@@ -102,7 +98,6 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 1.25rem;
 }
 
 .arrow {
@@ -112,10 +107,8 @@ export default {
 }
 
 .item-text {
-  font-weight: 500;
   font-size: 0.75rem;
   color: var(--third-color);
-  text-transform: none;
   padding: 5px 66px 0 0;
 }
 

@@ -8,9 +8,9 @@
           <h2 class="title">
             Актуальные акции <br /> на <span class="title-other-color">нашу продукцию</span>
           </h2>
-          <p class="subtitle">Учитывая ключевые сценарии поведения, обучения кадров влечет за собой процесс внедрения и
+          <p class="subtitle fw300">Учитывая ключевые сценарии поведения, обучения кадров влечет за собой процесс внедрения и
             модернизации распределения</p>
-          <AppButton class="button" text="перейти в  каталог" color="primary" />
+          <AppButton class="button" text="перейти в  каталог" color="primary"/>
         </div>
         <div class="line"></div>
       </div>
@@ -77,11 +77,11 @@ export default {
 .subtitle {
   font-size: 1.375rem;
   padding-bottom: 41px;
-  font-weight: 300;
 }
 
 .button {
-  width: 50%
+  width: 50%;
+  text-transform: uppercase;
 }
 
 .line {

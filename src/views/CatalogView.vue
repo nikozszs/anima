@@ -54,7 +54,6 @@ export default {
 
 <style scoped>
 .container {
-  background: var(--fourt-back);
   padding: 54px 99px 60px;
 }
 

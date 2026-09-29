@@ -23,7 +23,7 @@
         </div>
         <div class="container-price">
           <div class="container-oldPrice">
-            <span class="newPrice">
+            <span class="newPrice fw600">
               {{ currency(product.newPrice) }}
             </span>
             <span class="oldPrice" v-if="product.oldPrice !== undefined && product.oldPrice !== null">
@@ -32,10 +32,10 @@
           </div>
           <div class="block"
             v-if="product.percentSale">
-            <h5 class="percentSale">-{{ product.percentSale }}%</h5>
+            <h5 class="fw700">-{{ product.percentSale }}%</h5>
           </div>
         </div>
-        <p class="subtitleNDS">{{ product.subtitleNDS }}</p>
+        <p class="subtitleNDS fw500">{{ product.subtitleNDS }}</p>
         <div class="container-amount" v-if="product.amount > 0">
           <p class="label">Количество:</p>
           <div class="container-arrows">
@@ -107,10 +107,10 @@
         <div class="container-connection">
           <AppButton text="Консультация бесплатно"
             color="primary"
-            class="AppButton" />
+            class="AppButton text-sm" />
           <AppButton text="Оставить заявку"
             color="submit"
-            class="AppButton" />
+            class="AppButton text-sm" />
         </div>
       </div>
     </div>
@@ -193,10 +193,7 @@ export default {
 }
 
 .newPrice {
-  font-weight: 600;
   font-size: 2.25rem;
-  line-height: 100%;
-  letter-spacing: 0;
   color: var(--fourt-color);
 }
 
@@ -216,15 +213,9 @@ export default {
   padding: 8px 17px;
 }
 
-.percentSale {
-  font-weight: 700;
-  letter-spacing: 0;
-}
-
 .subtitleNDS {
   color: var(--sec-color);
   font-size: 0.75rem;
-  font-weight: 500;
   margin: 7px 0 35px;
 }
 
@@ -298,7 +289,6 @@ export default {
 
 td {
   color: var(--third-color);
-  font-size: 1rem;
   line-height: 47px;
 }
 
@@ -314,8 +304,6 @@ td {
 }
 
 .AppButton {
-  text-transform: none;
-  font-size: 0.875rem;
   border: 1px solid var(--seven-color);
 }
 </style>
