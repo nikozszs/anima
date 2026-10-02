@@ -7,8 +7,14 @@
       </div>
       <h1 class="title">Каменные изделия <span class="title-other-color">для вашего дома</span></h1>
       <div class="button-block">
-        <AppButton text="рассчитать стоимость" color="primary" @click="scroll"/>
-        <AppButton text="Связаться с нами" color="secondary" @click="scroll"/>
+        <AppButton text="Рассчитать стоимость"
+          color="primary"
+          @click="scroll"
+          class="button"/>
+        <AppButton text="Связаться с нами"
+          color="secondary"
+          @click="scroll"
+          class="button"/>
       </div>
     </div>
 
@@ -125,4 +131,7 @@ export default {
   background: #00000000;
 }
 
+.button {
+  text-transform: uppercase;
+}
 </style>

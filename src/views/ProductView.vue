@@ -73,15 +73,9 @@
         <div class="table">
           <div class="container-with-button">
             <p class="label">Характеристики</p>
-            <button @click="isOpen =!isOpen"
-              class="button"
-              >
-              <img src="../assets/arrowTable.svg"
-                alt="стрелка"
-                :class="{rotated: isOpen}">
-            </button>
+            <ArrowAccentColor v-model="isOpenCharacteristics"/>
           </div>
-          <table v-if="isOpen"
+          <table v-if="isOpenCharacteristics"
               id="characteristics-table"
               class="characteristics-table">
               <tbody>
@@ -110,9 +104,19 @@
             class="AppButton text-sm" />
           <AppButton text="Оставить заявку"
             color="submit"
-            class="AppButton text-sm" />
+            class="AppButton text-sm sm-button" />
         </div>
       </div>
+    </div>
+
+    <div class="block-description">
+      <div class="block-description-flex">
+        <p class="title-description fw600">Описание</p>
+        <ArrowAccentColor v-model="isOpenDescription"/>
+      </div>
+      <div></div>
+      <p v-if="isOpenDescription"
+        class="text-desc">{{ product.description }}</p>
     </div>
 
   </div>
@@ -125,20 +129,22 @@ import { products } from '@/data/products';
 import { useRoute } from 'vue-router';
 import { currency } from '@/utils/currency';
 import AppButton from '../components/ui/AppButton.vue'
+import ArrowAccentColor from '@/components/ui/ArrowAccentColor.vue';
 
 export default {
-  components: {ListCategory, AppButton},
+  components: {ListCategory, AppButton, ArrowAccentColor},
   setup() {
     const route = useRoute()
     const product = computed(() => products.find(a => a.id === Number(route.params.id)))
     const quantity = ref(1)
-    const isOpen = ref(false)
+    const isOpenCharacteristics = ref(false)
+    const isOpenDescription = ref(false)
 
     watch(product, () => {
       quantity.value = 1
     })
 
-    return {product, currency, quantity, isOpen}
+    return {product, currency, quantity, isOpenCharacteristics, isOpenDescription}
   }
 }
 </script>
@@ -238,7 +244,7 @@ export default {
   width: 28px;
 }
 
-.input, .button-arrow, .button  {
+.input, .button-arrow {
   border: none;
   cursor: pointer;
 }
@@ -274,10 +280,6 @@ export default {
   gap: 3px;
 }
 
-.button img.rotated {
-  transform: rotate(180deg);
-}
-
 .characteristics-table {
   margin: 14px 0 0;
   width: 100%;
@@ -305,5 +307,25 @@ td {
 
 .AppButton {
   border: 1px solid var(--seven-color);
+}
+
+.sm-button {
+  width: 70%;
+}
+
+.title-description {
+  font-size: 1.375rem;
+  color: var(--fourt-color);
+}
+
+.block-description-flex {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.text-desc {
+  line-height: 30px;
+  color: var(--fourt-color);
 }
 </style>
