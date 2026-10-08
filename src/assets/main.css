@@ -5,7 +5,8 @@
   --sec-back: #1d1d1ddd;
   --third-back: #000000;
   --fourt-back: #fff;
-  --fix-back: #F9F9F9;
+  --five-back: #F9F9F9;
+  --six-back: #EDF3F3;
   --first-color: #fff;
   --accent-color: #28553F;
   --sec-color: #9C9C9C;
@@ -108,7 +109,7 @@ h5 {
 .decoration {
   background: var(--accent-color);
   width: 120px;
-  height: 1px;
+  height: 2px;
   margin: 0 auto;
   margin-bottom: 11px;
 }
@@ -136,4 +137,21 @@ h5 {
 .accent-color {
   color: var(--accent-color);
   text-transform: none;
+}
+
+.line-progress {
+  --progress: 0%;
+  background: linear-gradient(
+    to right,
+    var(--accent-color) 0%,
+    var(--accent-color) var(--progress),
+    var(--six-back) var(--progress),
+    var(--six-back) 100%
+  );
+  height: 4px;
+  margin: 25px 0;
+}
+
+.black-text {
+  color: var(--fourt-color)
 }

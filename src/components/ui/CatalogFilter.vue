@@ -122,7 +122,7 @@ export default {
 
 <style scoped>
 .container-filter {
-  background: var(--fix-back);
+  background: var(--five-back);
   padding: 18px 14px;
   margin-top: 14px;
   width: 288px;

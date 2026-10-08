@@ -23,7 +23,7 @@
         </div>
         <div class="container-price">
           <div class="container-oldPrice">
-            <span class="newPrice fw600">
+            <span class="newPrice fw600 black-text">
               {{ currency(product.newPrice) }}
             </span>
             <span class="oldPrice" v-if="product.oldPrice !== undefined && product.oldPrice !== null">
@@ -47,7 +47,7 @@
               readonly>
             <div class="container-arrow-buttons">
               <button
-                class="button-arrow"
+                class="button-arrow black-text"
                 @click="quantity < product.amount ? quantity++ : null"
                 :disabled="quantity >= product.amount"
                 aria-label="увеличить количество"
@@ -111,13 +111,28 @@
 
     <div class="block-description">
       <div class="block-description-flex">
-        <p class="title-description fw600">Описание</p>
+        <p class="title-description fw600 black-text">Описание</p>
         <ArrowAccentColor v-model="isOpenDescription"/>
       </div>
-      <div></div>
+      <div class="line-progress" :style="{'--progress': '13%'}"></div>
       <p v-if="isOpenDescription"
-        class="text-desc">{{ product.description }}</p>
+        class="text-desc black-text">{{ product.description }}</p>
     </div>
+
+    <div class="block-payment">
+      <div v-for="block in blockPayment" :key="block.title">
+        <div class="block-title">
+          <img src="../assets/blockPayment.svg" alt="лого оплаты">
+          <p class="title-description fw600 black-text">{{ block.title }}</p>
+        </div>
+        <div class="line-progress"
+          :style="{ '--progress': block.percent }">
+        </div>
+        <p class="black-text text-subt">{{ block.subt }}</p>
+      </div>
+    </div>
+    
+    <sectionRecommendations />
 
   </div>
 </template>
@@ -130,21 +145,36 @@ import { useRoute } from 'vue-router';
 import { currency } from '@/utils/currency';
 import AppButton from '../components/ui/AppButton.vue'
 import ArrowAccentColor from '@/components/ui/ArrowAccentColor.vue';
+import sectionRecommendations from '@/components/ui/productPage/sectionRecommendations.vue';
 
 export default {
-  components: {ListCategory, AppButton, ArrowAccentColor},
+  components: {ListCategory, AppButton, ArrowAccentColor, sectionRecommendations},
   setup() {
     const route = useRoute()
     const product = computed(() => products.find(a => a.id === Number(route.params.id)))
     const quantity = ref(1)
     const isOpenCharacteristics = ref(false)
     const isOpenDescription = ref(false)
+    const blockPayment = [
+      {title: 'Оплата',
+        subt: 'Возможны любые виды оплаты. Безналичный расчет для юридических и физических лиц.',
+        percent: "26%",
+      },
+      {title: 'Доставка',
+        subt: 'Стоимость доставки зависит от месторождения камня и соответствует действующим тарифам на грузоперевозки авто и ж/д транспорта. Уточняйте у менеджеров.',
+        percent: "32%",
+      },
+      {title: 'Гарантия качества',
+        subt: 'Вся гарантийная продукция соответствует ГОСТам 32018-2012,23342-2012,9480-2012. Это характеризует наш гранит как продукцию высочайшего качества.',
+        percent: "56%",
+      },
+    ]
 
     watch(product, () => {
       quantity.value = 1
     })
 
-    return {product, currency, quantity, isOpenCharacteristics, isOpenDescription}
+    return {product, currency, quantity, isOpenCharacteristics, isOpenDescription, blockPayment}
   }
 }
 </script>
@@ -200,7 +230,6 @@ export default {
 
 .newPrice {
   font-size: 2.25rem;
-  color: var(--fourt-color);
 }
 
 .oldPrice {
@@ -249,10 +278,6 @@ export default {
   cursor: pointer;
 }
 
-.button-arrow {
-  color: var(--fourt-color);
-}
-
 .button-arrow:disabled {
   color: var(--seven-color);
 }
@@ -286,7 +311,7 @@ export default {
 }
 
 .characteristics-table tr:nth-child(odd) {
-  background-color: var(--fix-back);
+  background-color: var(--five-back);
 }
 
 td {
@@ -315,7 +340,6 @@ td {
 
 .title-description {
   font-size: 1.375rem;
-  color: var(--fourt-color);
 }
 
 .block-description-flex {
@@ -326,6 +350,21 @@ td {
 
 .text-desc {
   line-height: 30px;
-  color: var(--fourt-color);
+  margin: 20px 0 50px;
+}
+
+.block-payment {
+  margin: 27px 0 97px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.block-title {
+  display: flex;
+  gap: 10px;
+}
+
+.text-subt {
+  padding-right: 10%;
 }
 </style>
