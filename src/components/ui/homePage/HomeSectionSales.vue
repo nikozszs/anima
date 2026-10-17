@@ -10,7 +10,7 @@
           </h2>
           <p class="subtitle fw300">Учитывая ключевые сценарии поведения, обучения кадров влечет за собой процесс внедрения и
             модернизации распределения</p>
-          <AppButton class="button" text="перейти в  каталог" color="primary"/>
+          <AppButton class="button text-upper" text="перейти в  каталог" color="primary"/>
         </div>
         <div class="line"></div>
       </div>
@@ -81,7 +81,6 @@ export default {
 
 .button {
   width: 50%;
-  text-transform: uppercase;
 }
 
 .line {

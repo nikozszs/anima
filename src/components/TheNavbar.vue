@@ -69,7 +69,6 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-transform: uppercase;
   list-style: none;
   gap: 30px;
 }

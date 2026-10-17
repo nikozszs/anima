@@ -2,7 +2,7 @@
   <section class="container">
     <div class="relations">
       <div class="relations-flexcontainer">
-        <p class="subtitle">камень с душой </p>
+        <p class="subtitle text-upper">камень с душой </p>
         <div class="relations-line"></div>
       </div>
       <h1 class="title">Каменные изделия <span class="title-other-color">для вашего дома</span></h1>
@@ -10,11 +10,11 @@
         <AppButton text="Рассчитать стоимость"
           color="primary"
           @click="scroll"
-          class="button"/>
+          class="button text-upper"/>
         <AppButton text="Связаться с нами"
           color="secondary"
           @click="scroll"
-          class="button"/>
+          class="button text-upper"/>
       </div>
     </div>
 
@@ -84,7 +84,6 @@ export default {
   font-size: 0.875rem;
   font-weight: 400;
   color: var(--sec-color);
-  text-transform: uppercase;
 }
 
 .button-block {
@@ -129,9 +128,5 @@ export default {
   border: 3px solid var(--accent-color);
   box-shadow: -20px 0px 8px 7px #000;
   background: #00000000;
-}
-
-.button {
-  text-transform: uppercase;
 }
 </style>

@@ -131,7 +131,7 @@
         <p class="black-text text-subt">{{ block.subt }}</p>
       </div>
     </div>
-    
+
     <sectionRecommendations />
 
   </div>
@@ -154,7 +154,7 @@ export default {
     const product = computed(() => products.find(a => a.id === Number(route.params.id)))
     const quantity = ref(1)
     const isOpenCharacteristics = ref(false)
-    const isOpenDescription = ref(false)
+    const isOpenDescription = ref(true)
     const blockPayment = [
       {title: 'Оплата',
         subt: 'Возможны любые виды оплаты. Безналичный расчет для юридических и физических лиц.',

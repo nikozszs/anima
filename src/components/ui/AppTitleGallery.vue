@@ -1,6 +1,6 @@
 <template>
   <div class="container-titleGallery" :class="[alignClass]">
-    <p class="title">{{ title }}</p>
+    <p class="title text-upper">{{ title }}</p>
   </div>
 </template>
 
@@ -32,7 +32,6 @@ export default {
   font-size: 1.5rem;
   line-height: 150%;
   letter-spacing: 1px;
-  text-transform: uppercase;
   text-align: center;
   padding: 11px 0;
 }

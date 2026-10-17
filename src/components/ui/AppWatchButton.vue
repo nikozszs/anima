@@ -1,7 +1,7 @@
 <template>
   <div class="container-watch-button">
     <router-link
-      class="watch-button"
+      class="watch-button text-upper"
       :to=route
       :class="[colorClass]">
         смотреть все
@@ -71,7 +71,6 @@ export default {
 .watch-button {
   font-size: 1.313rem;
   text-decoration: none;
-  text-transform: uppercase;
 }
 
 .watch-button:hover {

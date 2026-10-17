@@ -34,7 +34,7 @@ export default {
   border: none;
   color: var(--first-color);
   width: 100%;
-  box-shadow: 0 0 47px 3px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 0 47px 3px rgba(0, 0, 0, 0.35);
 }
 
 .button-primary {

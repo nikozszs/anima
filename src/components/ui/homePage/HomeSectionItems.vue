@@ -88,8 +88,6 @@ export default {
   grid-template-rows: 340px 340px;
   gap: 10px;
   margin-top: 41px;
-  box-shadow: 0 4px 47px 15px rgba(0, 0, 0, 0.25);
-  background: rgba(0, 0, 0, 0.189);
 }
 
 .gallery-item {
@@ -102,6 +100,7 @@ export default {
   height: 100%;
   object-fit: cover;
   border-radius: 4px;
+  box-shadow: 0px 4px 20px -2px rgba(0, 0, 0, 0.7);
 }
 
 .tabletop {

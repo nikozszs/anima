@@ -102,6 +102,10 @@ h5 {
   transition: transform 0.25s ease;
 }
 
+.text-upper {
+  text-transform: uppercase;
+}
+
 .title-other-color {
   color: var(--accent-color);
 }
