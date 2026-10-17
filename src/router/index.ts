@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import CatalogView from '../views/CatalogView.vue'
 import ProductView from '../views/ProductView.vue'
 import NotFoundView from '../views/NotFoundView.vue'
+import SaleView from '@/views/SaleView.vue'
 
 const routes = [
   {
@@ -24,6 +25,11 @@ const routes = [
     path: '/:pathMatch(.*)*',
     name: 'not-found',
     component: NotFoundView,
+  },
+  {
+    path: '/sales',
+    name: 'sales',
+    component: SaleView,
   },
 ]
 

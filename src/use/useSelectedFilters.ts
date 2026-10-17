@@ -1,8 +1,9 @@
-import { ref, computed } from 'vue'
+import { ref, computed, type ComputedRef } from 'vue'
 import { products } from '@/data/products'
+import type { ProductItem } from '@/data/products'
 
-export function useSelectedFilters() {
-    const allProducts = ref(products)
+export function useSelectedFilters(sourceProducts: ProductItem[] | ComputedRef<ProductItem[]> = products) {
+    const allProducts = ref(sourceProducts)
     const selectedFilters = ref<Record<string, string[]>>({})
 
     const filterProducts = () => {
