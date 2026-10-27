@@ -19,18 +19,22 @@
       </div>
     </div>
 
-    <div class="gallery">
-      <AppCard
-        class="box-shadow"
+    <ul class="gallery">
+      <li
         v-for="product in visibleProducts"
         :key="product.id"
-        :id="product.id"
-        :image="product.image"
-        :title="product.title"
-        :new-price="product.newPrice"
-        :old-price="product.oldPrice"
-        :is-sale="product.isSale"  />
-    </div>
+        >
+        <AppCard
+          class="box-shadow"
+          :id="product.id"
+          :image="product.image"
+          :title="product.title"
+          :newPrice="product.newPrice"
+          :oldPrice="product.oldPrice"
+          :isSale="product.isSale"
+          />
+      </li>
+    </ul>
   </div>
 </template>
 

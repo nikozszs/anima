@@ -5,6 +5,7 @@ import ProductView from '../views/ProductView.vue'
 import NotFoundView from '../views/NotFoundView.vue'
 import SaleView from '@/views/SaleView.vue'
 import PartnershipView from '@/views/PartnershipView.vue'
+import PaymentView from '@/views/PaymentView.vue'
 
 const routes = [
   {
@@ -36,6 +37,11 @@ const routes = [
     path: '/partnership',
     name: 'partnership',
     component: PartnershipView,
+  },
+  {
+    path: '/payment',
+    name: 'payment',
+    component: PaymentView,
   },
 ]
 

@@ -218,6 +218,9 @@ export default {
   border: 1px solid var(--six-color);
   padding: 24px;
 }
+.condition-card:hover {
+  border: 1px solid var(--accent-color)
+}
 .condition-title {
   font-size: 1.2rem;
   color: var(--accent-color);

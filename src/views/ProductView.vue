@@ -153,7 +153,7 @@ export default {
     const route = useRoute()
     const product = computed(() => products.find(a => a.id === Number(route.params.id)))
     const quantity = ref(1)
-    const isOpenCharacteristics = ref(false)
+    const isOpenCharacteristics = ref(true)
     const isOpenDescription = ref(true)
     const blockPayment = [
       {title: 'Оплата',

@@ -60,7 +60,13 @@ export default {
   components: {AppButton},
   setup(props){
     const router = useRouter()
-    const openCard = () => router.push({name: 'product', params: {id: props.id}})
+    const openCard = () => {
+      router.push({name: 'product', params: {id: props.id}})
+      window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
+    }
     return {currency, openCard}
   }
 }
@@ -105,12 +111,12 @@ export default {
   padding: 7px;
 }
 
-.cardSales-title {
+.card-title {
   line-height: 22px;
   margin-bottom: 4px;
 }
 
-.card-title, .cardSales-subtitle {
+.card-title, .card-subtitle {
   color: var(--accent-color);
 }
 
